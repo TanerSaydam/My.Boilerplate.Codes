@@ -127,7 +127,7 @@ public static class ExtensionMethods
         {
             var clrType = entityType.ClrType;
 
-            if (typeof(IHasSoftDelete).IsAssignableFrom(clrType))
+            if (typeof(Entity).IsAssignableFrom(clrType))
             {
                 var parameter = Expression.Parameter(clrType, "e");
                 var property = Expression.Property(parameter, nameof(IHasSoftDelete.IsDeleted));
